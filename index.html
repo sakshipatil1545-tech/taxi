@@ -1,0 +1,1199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siddhivinayak Tours & Travels - Premium Cab Services</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a3c8b;
+            --primary-light: #2a5bc9;
+            --secondary: #ff9f00;
+            --dark: #333;
+            --light: #f8f9fa;
+            --gray: #6c757d;
+            --border-radius: 8px;
+            --box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            line-height: 1.3;
+            margin-bottom: 1rem;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header & Navigation */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo-icon {
+            color: var(--primary);
+            font-size: 28px;
+        }
+        
+        .logo-text {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .logo-text span {
+            color: var(--secondary);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        nav a:hover {
+            color: var(--primary);
+        }
+        
+        nav a.active {
+            color: var(--primary);
+        }
+        
+        nav a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--primary);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: var(--primary);
+            cursor: pointer;
+        }
+        
+        /* Main Content */
+        main {
+            margin-top: 80px;
+            min-height: calc(100vh - 200px);
+        }
+        
+        .page {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .page.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        /* Home Page */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+            border-radius: 0 0 var(--border-radius) var(--border-radius);
+            margin-bottom: 60px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none"><path d="M500,97C126.7,96.3,0.8,19.8,0,0v100l1000,0V1C1000,19.4,873.3,97.8,500,97z" fill="%23ffffff"/></svg>');
+            background-size: 100% 100px;
+            background-position: bottom;
+            background-repeat: no-repeat;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            animation: slideDown 1s ease;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            animation: slideUp 1s ease 0.2s both;
+        }
+        
+        @keyframes slideDown {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        @keyframes slideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 4px 10px rgba(255, 159, 0, 0.3);
+        }
+        
+        .btn:hover {
+            background-color: #e68a00;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(255, 159, 0, 0.4);
+        }
+        
+        .services-overview {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+        
+        .service-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            text-align: center;
+            transition: var(--transition);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .service-icon {
+            font-size: 48px;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        /* Image Slider */
+        .slider-container {
+            position: relative;
+            height: 500px;
+            margin: 60px 0;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .slider {
+            position: relative;
+            height: 100%;
+        }
+        
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .slide.active {
+            opacity: 1;
+        }
+        
+        .slide:nth-child(1) {
+            background-color: #5a9cf8;
+        }
+        
+        .slide:nth-child(2) {
+            background-color: #ffb347;
+        }
+        
+        .slide:nth-child(3) {
+            background-color: #42b883;
+        }
+        
+        .slide:nth-child(4) {
+            background-color: #9966cc;
+        }
+        
+        .slide-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 30px;
+            background: linear-gradient(transparent, rgba(0,0,0,0.7));
+            color: white;
+        }
+        
+        .slider-nav {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 10;
+        }
+        
+        .slider-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: rgba(255,255,255,0.5);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .slider-dot.active {
+            background-color: white;
+            transform: scale(1.2);
+        }
+        
+        .slider-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(255,255,255,0.7);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: var(--primary);
+            cursor: pointer;
+            transition: var(--transition);
+            z-index: 10;
+        }
+        
+        .slider-arrow:hover {
+            background-color: white;
+        }
+        
+        .slider-arrow.prev {
+            left: 20px;
+        }
+        
+        .slider-arrow.next {
+            right: 20px;
+        }
+        
+        /* About Page */
+        .about-section {
+            padding: 60px 0;
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+            align-items: center;
+        }
+        
+        .about-text h2 {
+            color: var(--primary);
+            position: relative;
+            display: inline-block;
+            margin-bottom: 25px;
+        }
+        
+        .about-text h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--secondary);
+        }
+        
+        .highlight-box {
+            background-color: white;
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            border-left: 5px solid var(--secondary);
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .feature {
+            text-align: center;
+            padding: 25px;
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .feature i {
+            font-size: 40px;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        /* Services Page */
+        .services-section {
+            padding: 60px 0;
+        }
+        
+        .services-section h2 {
+            text-align: center;
+            color: var(--primary);
+            margin-bottom: 50px;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-detail {
+            background-color: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+        
+        .service-detail:hover {
+            transform: translateY(-5px);
+        }
+        
+        .service-header {
+            background-color: var(--primary);
+            color: white;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .service-body {
+            padding: 25px;
+        }
+        
+        /* Contact Page */
+        .contact-section {
+            padding: 60px 0;
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+        }
+        
+        .contact-info {
+            background-color: white;
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+        
+        .contact-item i {
+            width: 50px;
+            height: 50px;
+            background-color: rgba(26, 60, 139, 0.1);
+            color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+        }
+        
+        .contact-form {
+            background-color: white;
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            font-family: 'Poppins', sans-serif;
+            transition: var(--transition);
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(26, 60, 139, 0.1);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 50px 0 20px;
+            margin-top: 60px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 20px;
+        }
+        
+        .footer-logo span {
+            color: var(--secondary);
+        }
+        
+        .footer-links h3,
+        .footer-contact h3 {
+            color: var(--secondary);
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary);
+            padding-left: 5px;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+        
+        /* Watermark */
+        .watermark {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            color: rgba(0,0,0,0.1);
+            font-size: 14px;
+            transform: rotate(-45deg);
+            z-index: 1;
+            pointer-events: none;
+            font-weight: bold;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .slider-container {
+                height: 400px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            nav {
+                position: fixed;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+                padding: 20px;
+                transform: translateY(-100%);
+                opacity: 0;
+                transition: var(--transition);
+                z-index: 999;
+            }
+            
+            nav.active {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .slider-container {
+                height: 300px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero {
+                padding: 80px 0;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .slider-container {
+                height: 250px;
+            }
+            
+            .service-card, .service-detail {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Watermark -->
+    <div class="watermark">ARRC Technology Kothrud Pune</div>
+    
+    <!-- Header -->
+    <header>
+        <div class="header-container container">
+            <div class="logo">
+                <div class="logo-icon"><i class="fas fa-car"></i></div>
+                <div class="logo-text">Siddhivinayak<span>Tours</span></div>
+            </div>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="#home" class="nav-link active" data-page="home">Home</a></li>
+                    <li><a href="#about" class="nav-link" data-page="about">About Us</a></li>
+                    <li><a href="#services" class="nav-link" data-page="services">Services</a></li>
+                    <li><a href="#contact" class="nav-link" data-page="contact">Contact Us</a></li>
+                    <li><a href="#book" class="btn">Book Now</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main>
+        <!-- Home Page -->
+        <section id="home" class="page active">
+            <div class="hero">
+                <div class="container">
+                    <h1>Premium Cab & Taxi Services</h1>
+                    <p>Experience comfortable, reliable, and affordable transportation services for all your travel needs. With years of experience, we ensure safe and timely journeys.</p>
+                    <a href="#contact" class="btn">Book Your Ride Today</a>
+                </div>
+            </div>
+            
+            <div class="container">
+                <!-- Image Slider -->
+                <div class="slider-container">
+                    <div class="slider">
+                        <div class="slide active" id="slide1">
+                            <img src="image4.jpeg" alt="Luxury Sedans" height="600" width="1200">
+                            <div class="slide-content">
+                                <h3>Luxury Sedans</h3>
+                                <p>Travel in comfort with our premium sedan services</p>
+                            </div>
+                        </div>
+                        <div class="slide" id="slide2" >
+                            <img src="image1.jpeg" alt="Outstation Trips" height="600" width="1200">
+                            <div class="slide-content">
+                                <h3>Outstation Trips</h3>
+                                <p>Reliable long-distance travel solutions</p>
+                            </div>
+                        </div>
+                        <div class="slide" id="slide3">
+                            <img src="image2.jpeg" alt="Airport Transfers" height="600" width="1200">
+                            <div class="slide-content">
+                                <h3>Airport Transfers</h3>
+                                <p>Punctual pickups and drops for your flights</p>
+                            </div>
+                        </div>
+                        <div class="slide" id="slide4">
+                            <img src="image3.jpeg" alt="Corporate Travel" height="600" width="1200">
+                            <div class="slide-content">
+                                <h3>Corporate Travel</h3>
+                                <p>Professional transportation for business needs</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="slider-arrow prev" id="prevSlide">
+                        <i class="fas fa-chevron-left"></i>
+                    </div>
+                    <div class="slider-arrow next" id="nextSlide">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                    
+                    <div class="slider-nav">
+                        <div class="slider-dot active" data-slide="0"></div>
+                        <div class="slider-dot" data-slide="1"></div>
+                        <div class="slider-dot" data-slide="2"></div>
+                        <div class="slider-dot" data-slide="3"></div>
+                    </div>
+                </div>
+                
+                <h2 style="text-align: center; color: var(--primary); margin-bottom: 40px;">Our Services</h2>
+                
+                <div class="services-overview">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-taxi"></i>
+                        </div>
+                        <h3>Taxi Booking</h3>
+                        <p>Book reliable taxis for local travel, airport transfers, and outstation trips with transparent pricing and professional drivers.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-car"></i>
+                        </div>
+                        <h3>Cab Service</h3>
+                        <p>Comfortable and affordable cab services for all occasions - business meetings, family outings, or special events.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-plane-departure"></i>
+                        </div>
+                        <h3>Airport Transfers</h3>
+                        <p>Timely and reliable airport pickups and drops with flight tracking to ensure you never miss your flight.</p>
+                    </div>
+                </div>
+                
+                <div style="text-align: center; margin: 60px 0;">
+                    <h3 style="color: var(--primary); margin-bottom: 20px;">Ready to Travel?</h3>
+                    <p style="max-width: 700px; margin: 0 auto 30px;">Book your ride with us for a comfortable and hassle-free journey. Our professional drivers and well-maintained vehicles ensure you reach your destination safely.</p>
+                    <a href="#contact" class="btn" style="font-size: 1.1rem; padding: 15px 40px;">
+                        <i class="fas fa-phone-alt"></i> Contact Us Now
+                    </a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- About Us Page -->
+        <section id="about" class="page">
+            <div class="about-section container">
+                <div class="about-content">
+                    <div class="about-text">
+                        <h2>About Siddhivinayak Tours & Travels</h2>
+                        <p>Founded with a vision to provide reliable and comfortable transportation services, Siddhivinayak Tours & Travels has been serving customers for over a decade. We take pride in our commitment to safety, punctuality, and customer satisfaction.</p>
+                        
+                        <div class="highlight-box" style="margin: 30px 0;">
+                            <p>With a fleet of well-maintained vehicles and experienced drivers, we ensure every journey is comfortable, safe, and memorable. Our team is dedicated to providing exceptional service that exceeds customer expectations.</p>
+                        </div>
+                        
+                        <h3>Our Mission</h3>
+                        <p>To provide reliable, affordable, and comfortable transportation solutions that make travel hassle-free for our customers.</p>
+                        
+                        <h3>Our Vision</h3>
+                        <p>To become the most trusted and preferred travel partner for individuals, families, and businesses across the region.</p>
+                    </div>
+                    
+                    <div>
+                        <h3 style="color: var(--primary); margin-bottom: 25px;">Why Choose Us?</h3>
+                        
+                        <div class="features">
+                            <div class="feature">
+                                <i class="fas fa-shield-alt"></i>
+                                <h4>Safe & Reliable</h4>
+                                <p>Well-maintained vehicles and verified drivers ensure your safety.</p>
+                            </div>
+                            
+                            <div class="feature">
+                                <i class="fas fa-clock"></i>
+                                <h4>Punctual Service</h4>
+                                <p>We value your time and ensure timely pickups and drops.</p>
+                            </div>
+                            
+                            <div class="feature">
+                                <i class="fas fa-rupee-sign"></i>
+                                <h4>Affordable Rates</h4>
+                                <p>Competitive pricing with no hidden charges.</p>
+                            </div>
+                            
+                            <div class="feature">
+                                <i class="fas fa-headset"></i>
+                                <h4>24/7 Support</h4>
+                                <p>Round-the-clock customer support for all your queries.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Services Page -->
+        <section id="services" class="page">
+            <div class="services-section container">
+                <h2>Our Services</h2>
+                
+                <div class="services-grid">
+                    <div class="service-detail">
+                        <div class="service-header">
+                            <i class="fas fa-taxi fa-2x"></i>
+                            <h3>Taxi Booking Service</h3>
+                        </div>
+                        <div class="service-body">
+                            <p>Our taxi booking service offers convenient transportation solutions for all your local and outstation travel needs. With easy booking options and transparent pricing, you can travel with peace of mind.</p>
+                            <ul style="padding-left: 20px; margin-top: 15px;">
+                                <li style="margin-bottom: 8px;">Local city rides with metered fares</li>
+                                <li style="margin-bottom: 8px;">Outstation trips with fixed pricing</li>
+                                <li style="margin-bottom: 8px;">24/7 availability for urgent travel</li>
+                                <li>Multiple vehicle options to choose from</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="service-detail">
+                        <div class="service-header">
+                            <i class="fas fa-car fa-2x"></i>
+                            <h3>Cab Service</h3>
+                        </div>
+                        <div class="service-body">
+                            <p>Experience comfort and reliability with our premium cab services. Whether for business meetings, airport transfers, or family outings, we provide well-maintained vehicles with professional drivers.</p>
+                            <ul style="padding-left: 20px; margin-top: 15px;">
+                                <li style="margin-bottom: 8px;">Sedans, SUVs, and luxury cars available</li>
+                                <li style="margin-bottom: 8px;">Hourly and daily rental packages</li>
+                                <li style="margin-bottom: 8px;">Corporate travel solutions</li>
+                                <li>Event transportation services</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="service-detail">
+                        <div class="service-header">
+                            <i class="fas fa-plane-departure fa-2x"></i>
+                            <h3>Airport Transfers</h3>
+                        </div>
+                        <div class="service-body">
+                            <p>Never miss a flight with our reliable airport transfer services. We track your flight schedule to ensure timely pickups and drops, making your travel experience seamless.</p>
+                            <ul style="padding-left: 20px; margin-top: 15px;">
+                                <li style="margin-bottom: 8px;">Domestic and international airport transfers</li>
+                                <li style="margin-bottom: 8px;">Flight tracking for timely service</li>
+                                <li style="margin-bottom: 8px;">Meet and greet service available</li>
+                                <li>Luggage assistance provided</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="service-detail">
+                        <div class="service-header">
+                            <i class="fas fa-road fa-2x"></i>
+                            <h3>Outstation Travel</h3>
+                        </div>
+                        <div class="service-body">
+                            <p>Plan your long-distance trips with our comfortable outstation travel services. We provide well-maintained vehicles and experienced drivers for safe and enjoyable journeys.</p>
+                            <ul style="padding-left: 20px; margin-top: 15px;">
+                                <li style="margin-bottom: 8px;">One-way and round trips</li>
+                                <li style="margin-bottom: 8px;">Multi-day packages with driver accommodation</li>
+                                <li style="margin-bottom: 8px;">Flexible itinerary planning</li>
+                                <li>Pilgrimage and tourist destination packages</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Contact Us Page -->
+        <section id="contact" class="page">
+            <div class="contact-section container">
+                <h2 style="text-align: center; color: var(--primary); margin-bottom: 50px;">Contact Us</h2>
+                
+                <div class="contact-container">
+                    <div class="contact-info">
+                        <h3>Get in Touch</h3>
+                        <p>Have questions or need to book a ride? Reach out to us using the contact details below or fill out the contact form.</p>
+                        
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Address</h4>
+                                <p>123 Travel Street, City Center<br>Mumbai, Maharashtra 400001</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <i class="fas fa-phone-alt"></i>
+                            <div>
+                                <h4>Phone Number</h4>
+                                <p>+91 98765 43210<br>+91 98765 43211</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <p>info@siddhivinayaktours.com<br>bookings@siddhivinayaktours.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h4>Operating Hours</h4>
+                                <p>24/7 Service Available<br>365 Days a Year</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-form">
+                        <h3>Send us a Message</h3>
+                        <form id="contactForm">
+                            <div class="form-group">
+                                <label for="name">Full Name *</label>
+                                <input type="text" id="name" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="mobile">Mobile Number *</label>
+                                <input type="tel" id="mobile" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="service">Service Required</label>
+                                <select id="service" style="width: 100%; padding: 12px 15px; border: 1px solid #ddd; border-radius: var(--border-radius);">
+                                    <option value="">Select a service</option>
+                                    <option value="taxi">Taxi Booking</option>
+                                    <option value="cab">Cab Service</option>
+                                    <option value="airport">Airport Transfer</option>
+                                    <option value="outstation">Outstation Travel</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message">Message *</label>
+                                <textarea id="message" rows="5" required></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn" style="width: 100%;">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Booking Page (simplified version) -->
+        <section id="book" class="page">
+            <div class="container" style="padding: 60px 20px; text-align: center;">
+                <h2 style="color: var(--primary); margin-bottom: 20px;">Booking Page</h2>
+                <p style="max-width: 700px; margin: 0 auto 40px;">For bookings, please contact us directly via phone or use the contact form on our Contact Us page. Our team will assist you with all your travel needs.</p>
+                
+                <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+                    <a href="#contact" class="btn" style="font-size: 1.1rem;">
+                        <i class="fas fa-phone-alt"></i> Call to Book
+                    </a>
+                    <a href="#contact" class="btn" style="font-size: 1.1rem; background-color: var(--primary);">
+                        <i class="fas fa-envelope"></i> Email for Booking
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <div class="footer-logo">Siddhivinayak<span>Tours</span></div>
+                    <p>Providing reliable and comfortable transportation services for over a decade. Your trusted travel partner for all occasions.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-map-marker-alt" style="margin-right: 10px;"></i> 123 Travel Street, City Center, Mumbai</p>
+                    <p><i class="fas fa-phone-alt" style="margin-right: 10px;"></i> +91 98765 43210</p>
+                    <p><i class="fas fa-envelope" style="margin-right: 10px;"></i> info@siddhivinayaktours.com</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Siddhivinayak Tours & Travels. All rights reserved.</p>
+                <p style="margin-top: 5px; font-size: 0.8rem;">Website by ARRC Technology Kothrud Pune</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Navigation
+        const navLinks = document.querySelectorAll('.nav-link');
+        const pages = document.querySelectorAll('.page');
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mainNav = document.getElementById('mainNav');
+        
+        // Set up navigation
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Get target page
+                const targetPage = this.getAttribute('data-page');
+                
+                // Update active nav link
+                navLinks.forEach(nav => nav.classList.remove('active'));
+                this.classList.add('active');
+                
+                // Show target page
+                pages.forEach(page => {
+                    page.classList.remove('active');
+                    if (page.id === targetPage) {
+                        page.classList.add('active');
+                    }
+                });
+                
+                // Close mobile menu if open
+                if (mainNav.classList.contains('active')) {
+                    mainNav.classList.remove('active');
+                }
+                
+                // Scroll to top
+                window.scrollTo(0, 0);
+            });
+        });
+        
+        // Mobile menu toggle
+        mobileMenuBtn.addEventListener('click', function() {
+            mainNav.classList.toggle('active');
+        });
+        
+        // Image Slider
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.slider-dot');
+        const prevBtn = document.getElementById('prevSlide');
+        const nextBtn = document.getElementById('nextSlide');
+        let currentSlide = 0;
+        
+        // Initialize slider with placeholder images
+        // In a real scenario, these would be replaced with actual image URLs
+        const slideImages = [
+            'image1.jpg',
+            'image2.jpg',
+            'image3.jpg',
+            'image4.jpg'
+        ];
+        
+        // Set background images for slides
+        slides.forEach((slide, index) => {
+            // Using gradient as placeholder since we don't have actual images
+            // In a real implementation, you would use:
+            // slide.style.backgroundImage = `url(${slideImages[index]})`;
+            
+            // For demo purposes, we'll use gradient backgrounds
+            const colors = ['#5a9cf8', '#ffb347', '#42b883', '#9966cc'];
+            slide.style.background = `linear-gradient(135deg, ${colors[index]} 0%, ${colors[(index + 1) % colors.length]} 100%)`;
+        });
+        
+        // Function to show a specific slide
+        function showSlide(n) {
+            // Hide all slides
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            // Update current slide index
+            currentSlide = (n + slides.length) % slides.length;
+            
+            // Show current slide and update dot
+            slides[currentSlide].classList.add('active');
+            dots[currentSlide].classList.add('active');
+        }
+        
+        // Event listeners for slider controls
+        prevBtn.addEventListener('click', () => showSlide(currentSlide - 1));
+        nextBtn.addEventListener('click', () => showSlide(currentSlide + 1));
+        
+        // Event listeners for dots
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => showSlide(index));
+        });
+        
+        // Auto slide every 5 seconds
+        setInterval(() => {
+            showSlide(currentSlide + 1);
+        }, 5000);
+        
+        // Contact form submission
+        const contactForm = document.getElementById('contactForm');
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const mobile = document.getElementById('mobile').value;
+            const message = document.getElementById('message').value;
+            
+            // In a real implementation, you would send this data to a server
+            // For demo purposes, we'll just show an alert
+            alert(`Thank you ${name}! Your message has been received. We will contact you at ${mobile} shortly.`);
+            
+            // Reset form
+            contactForm.reset();
+        });
+        
+        // Book Now button functionality
+        const bookNowBtn = document.querySelector('a[href="#book"]');
+        if (bookNowBtn) {
+            bookNowBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Update active nav link
+                navLinks.forEach(nav => nav.classList.remove('active'));
+                
+                // Show booking page
+                pages.forEach(page => {
+                    page.classList.remove('active');
+                    if (page.id === 'book') {
+                        page.classList.add('active');
+                    }
+                });
+                
+                // Close mobile menu if open
+                if (mainNav.classList.contains('active')) {
+                    mainNav.classList.remove('active');
+                }
+                
+                // Scroll to top
+                window.scrollTo(0, 0);
+            });
+        }
+    </script>
+</body>
+</html>
